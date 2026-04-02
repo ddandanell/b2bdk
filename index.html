@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D + M Partnership Alignment</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f4;color:#1c1917;min-height:100vh}
+.ctr{max-width:780px;margin:0 auto;padding:16px}
+.pick{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:92vh;gap:28px;text-align:center}
+.pick h1{font-size:26px;font-weight:700}
+.pick p{color:#78716c;font-size:14px;max-width:460px;line-height:1.6}
+.pick-btns{display:flex;gap:16px}
+.pick-btn{padding:20px 48px;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;border:2px solid #e7e5e4;background:#fff;transition:all .2s}
+.pick-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.pick-btn.d{color:#2563eb}.pick-btn.d:hover{border-color:#2563eb;background:#eff6ff}
+.pick-btn.m{color:#d97706}.pick-btn.m:hover{border-color:#d97706;background:#fffbeb}
+.hdr{text-align:center;padding:16px 0 8px}
+.hdr-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e}
+.hdr h1{font-size:20px;font-weight:700;margin:4px 0}
+.badge{display:inline-block;margin-top:6px;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:700}
+.badge.d{background:#dbeafe;color:#1d4ed8}.badge.m{background:#fef3c7;color:#b45309}
+.day-tabs{display:flex;justify-content:center;gap:4px;margin:14px 0;flex-wrap:wrap}
+.day-tab{padding:10px 12px;font-size:11px;font-weight:700;border-radius:8px;border:2px solid #e7e5e4;background:#fff;cursor:pointer;color:#57534e;transition:all .15s}
+.day-tab:hover{background:#fafaf9}
+.day-tab.active{background:#1c1917;color:#fff;border-color:#1c1917}
+.day-tab.locked{border-color:#86efac;background:#f0fdf4;color:#15803d}
+.day-tab.active.locked{background:#15803d;color:#fff;border-color:#15803d}
+.day-title{text-align:center;margin-bottom:14px}
+.day-title h2{font-size:17px;font-weight:700}.day-title p{font-size:12px;color:#78716c;margin-top:2px}
+.sub-tabs{display:flex;justify-content:center;gap:4px;margin:0 0 12px;flex-wrap:wrap}
+.sub-tab{padding:7px 14px;font-size:11px;font-weight:600;border-radius:6px;border:1px solid #e7e5e4;background:#fff;cursor:pointer;color:#78716c}
+.sub-tab:hover{background:#fafaf9}.sub-tab.active{background:#44403c;color:#fff;border-color:#44403c}
+.save-bar{text-align:center;font-size:11px;color:#16a34a;margin-bottom:10px;font-weight:500}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#78716c;margin-bottom:6px}
+.card textarea{width:100%;border:1px solid #e7e5e4;border-radius:8px;padding:12px;font-size:14px;font-family:inherit;resize:vertical;min-height:80px;outline:none;background:#fafaf9;line-height:1.5}
+.card textarea:focus{border-color:#a8a29e;background:#fff;box-shadow:0 0 0 3px rgba(168,162,158,.1)}
+.card textarea::placeholder{color:#c0bbb6}
+.card textarea:disabled{background:#f0efed;cursor:not-allowed}
+.done-bar{text-align:center;margin:16px 0}
+.btn-done{padding:14px 32px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .2s}
+.btn-done.off{background:#1c1917;color:#fff}.btn-done.off:hover{background:#292524}
+.btn-done.on{background:#dcfce7;color:#15803d;border:2px solid #86efac}
+.done-hint{font-size:11px;color:#a8a29e;margin-top:6px}
+.sh-card{background:#fff;border-radius:12px;padding:22px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);text-align:center}
+.sh-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.sh-card p{font-size:12px;color:#78716c;margin-bottom:14px}
+.btn-a{padding:12px 24px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid #e7e5e4;background:#fff;color:#1c1917;transition:all .15s}
+5s}
+.btn-a:hover{background:#fafaf9}
+.btn-a.pri{background:#1c1917;color:#fff;border-color:#1c1917}.btn-a.pri:hover{background:#292524}
+.btn-a.ok{background:#16a34a;color:#fff;border-color:#16a34a}
+.btn-a:disabled{opacity:.4;cursor:not-allowed}
+.imp-box{width:100%;height:80px;border:1px solid #e7e5e4;border-radius:8px;padding:12px;font-size:11px;font-family:monospace;resize:none;outline:none;margin-bottom:10px}
+.imp-box:focus{border-color:#a8a29e}
+.cmp{background:#fff;border-radius:12px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.cmp-h{padding:10px 16px;background:#fafaf9;border-bottom:1px solid #f0efed;font-size:12px;font-weight:700;color:#57534e}
+.cmp-g{display:grid;grid-template-columns:1fr 1fr}
+.cmp-c{padding:14px}.cmp-c:first-child{border-right:1px solid #f0efed}
+.cmp-n{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.cmp-n.d{color:#2563eb}.cmp-n.m{color:#d97706}
+.cmp-t{font-size:13px;line-height:1.55;white-space:pre-wrap;color:#44403c}
+.cmp-t.empty{color:#c0bbb6;font-style:italic}
+.cmp-f{padding:7px 16px;background:#fafaf9;border-top:1px solid #f0efed;font-size:10px;font-weight:600}
+.cmp-f.both{color:#16a34a}.cmp-f.partial{color:#ea580c}.cmp-f.none{color:#a8a29e}
+.empty-st{text-align:center;padding:50px 20px;color:#a8a29e}
+.empty-st h3{font-size:15px;color:#78716c;margin-bottom:6px}
+.act-card{background:#fff;border-radius:12px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.act-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.act-card>p{font-size:12px;color:#78716c;margin-bottom:14px}
+.act-row{display:flex;gap:8px;margin-bottom:14px}
+.act-row input{flex:1;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:13px;outline:none}
+.act-row input:focus{border-color:#a8a29e}
+.act-row button{padding:10px 18px;background:#1c1917;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.act-i{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;border:1px solid #e7e5e4;margin-bottom:5px}
+.act-i.done{background:#f0fdf4;border-color:#bbf7d0}
+.act-chk{width:20px;height:20px;border-radius:5px;border:2px solid #d6d3d1;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px}
+.act-chk.on{background:#16a34a;border-color:#16a34a;color:#fff}
+.act-txt{flex:1;font-size:13px}.act-txt.done{text-decoration:line-through;color:#a8a29e}
+.act-own{width:80px;padding:5px 6px;border:1px solid #e7e5e4;border-radius:5px;font-size:10px;text-align:center;outline:none;background:#fafaf9}
+.act-rm{background:none;border:none;color:#d6d3d1;cursor:pointer;font-size:15px;padding:2px}.act-rm:hover{color:#ef4444}
+.act-empty{text-align:center;padding:30px;color:#a8a29e;font-size:12px}
+.reset-row{text-align:center;margin:20px 0}
+.btn-reset{padding:7px 14px;font-size:11px;color:#a8a29e;background:none;border:1px solid #e7e5e4;border-radius:7px;cursor:pointer}.btn-reset:hover{color:#ef4444;border-color:#fca5a5}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1c1917;color:#fff;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:600;z-index:100;opacity:0;transition:opacity .3s;pointer-events:none}.toast.show{opacity:1}
+@media(max-width:600px){.cmp-g{grid-template-columns:1fr}.cmp-c:first-child{border-right:none;border-bottom:1px solid #f0efed}.pick-btns{flex-direction:column}.act-row{flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="pin-gate" style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:20px;text-align:center">
+<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e">Mrs Hallo halloo</p>
+<h1 style="font-size:24px;font-weight:700">Partnership Alignment</h1>
+<p style="color:#78716c;font-size:14px">Enter pin code to continue</p>
+<input id="pin-input" type="password" maxlength="8" placeholder="Pin code" style="width:200px;padding:14px;border:2px solid #e7e5e4;border-radius:10px;font-size:18px;text-align:center;outline:none;font-family:inherit;letter-spacing:.2em" autofocus>
+<button id="pin-btn" style="padding:14px 40px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;background:#1c1917;color:#fff">Enter</button>
+<p id="pin-err" style="color:#ef4444;font-size:13px;display:none">Wrong pin code</p>
+</div>
+<div id="app" style="display:none"></div>
+<div id="toast" class="toast"></div>
+<script>
+var PIN='20262026';
+(function(){
+var gate=document.getElementById('pin-gate'),app=document.getElementById('app'),inp=document.getElementById('pin-input'),btn=document.getElementById('pin-btn'),err=document.getElementById('pin-err');
+if(sessionStorage.getItem('ps4_auth')==='1'){gate.style.display='none';app.style.display='block';}
+function tryPin(){
+if(inp.value===PIN){sessionStorage.setItem('ps4_auth','1');gate.style.display='none';app.style.display='block';}
+else{err.style.display='block';inp.value='';inp.focus();}
+}
+btn.addEventListener('click',tryPin);
+inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryPin();});
+})();
+
+var DAYS=[
+{id:'day1',num:'Day 1',title:'Partnership Foundation',sub:'Do we want this? How does it work? What are the rules?',sections:[
+{id:'d1_want',label:'Do we want to work together? Why?',ph:'Be honest. What makes this partnership worth it for you?'},
+{id:'d1_commit',label:'What is your commitment level?',ph:'Full-time? Part-time? How many hours? For how long? What are you willing to sacrifice?'},
+{id:'d1_rules',label:'Rules of working together',ph:'How do we communicate? How do we handle disagreements? What happens if one person doesn\'t deliver?'},
+{id:'d1_company',label:'Company structure',ph:'Ownership split? Legal entity? Who signs what? Where is the company registered?'},
+{id:'d1_roles',label:'Roles & decision rights',ph:'Who decides what? Who has final say on what topics? What needs both to agree?'},
+{id:'d1_money',label:'Money rules',ph:'How do we split revenue? Salaries? Expenses? Who pays for what? What if one invests more?'},
+{id:'d1_exit',label:'Exit & protection',ph:'What if one wants out? What happens to the work? IP? Clients? Non-compete?'},
+{id:'d1_deal',label:'Dealbreakers',ph:'What would make you walk away? Non-negotiables? Red lines?'}
+]},
+{id:'day2',num:'Day 2',title:'Full Inventory',sub:'Everything each person has been doing. Customers, products, people, assets.',sections:[
+{id:'d2_work',label:'What have you been working on the last 5 months?',ph:'Projects, clients, products, experiments, systems built...'},
+{id:'d2_cust',label:'Customers & clients',ph:'Who are they? What do they pay? What stage? Contracts? Pipeline?'},
+{id:'d2_prod',label:'Products & services',ph:'What exists? What\'s being sold? What\'s in progress? What\'s just an idea?'},
+{id:'d2_people',label:'People & team',ph:'Who do you work with? Freelancers? Employees? Key contacts?'},
+{id:'d2_assets',label:'Assets & systems',ph:'Code, platforms, tools, accounts, domains, IP, content, templates...'},
+{id:'d2_money',label:'Financial status',ph:'Current revenue? Costs? Runway? Debts? Pending payments?'},
+{id:'d2_reuse',label:'What can the other person use from your work?',ph:'What from your side would help the partnership? What can be combined?'},
+{id:'d2_where',label:'Where does each thing belong?',ph:'Which projects go into the partnership? Which stay personal? Which get killed?'}
+]},
+{id:'day3',num:'Day 3',title:'Decisions & Direction',sub:'What we do, what we don\'t do, and the timeline.',sections:[
+{id:'d3_1m',label:'What do we do in the next 1 month?',ph:'Immediate actions, quick wins, must-do items...'},
+{id:'d3_3m',label:'Where should we be in 3 months?',ph:'Revenue target? Product status? Client count? Team size?'},
+{id:'d3_6m',label:'Where should we be in 6 months?',ph:'Business state? Revenue? Systems? Market position?'},
+{id:'d3_12m',label:'12-month goal',ph:'The big picture. What does success look like in one year?'},
+{id:'d3_who',label:'Who does what?',ph:'David\'s responsibilities vs Mohammed\'s responsibilities. Clear ownership.'},
+{id:'d3_not',label:'What are we NOT going to do?',ph:'What do we say no to? What gets parked? What distractions do we kill?'},
+{id:'d3_focus',label:'What is the #1 focus for the first 90 days?',ph:'If everything else fails, this one thing must work. What is it?'}
+]},
+{id:'day4',num:'Day 4',title:'Game Plan',sub:'Tasks, people, money targets, validation. Then we start.',sections:[
+{id:'d4_tasks',label:'All tasks to get started',ph:'List everything that needs to happen in the first 2-4 weeks. Be specific.'},
+{id:'d4_people',label:'Who do we need?',ph:'Developers? Designers? Salespeople? Where do we find them? Budget?'},
+{id:'d4_how',label:'How are we going to do it?',ph:'Working rhythm? Weekly calls? Tools? Reporting? How do we stay aligned?'},
+{id:'d4_money',label:'Money goal per project/product',ph:'Revenue target for each thing. Monthly? First 3 months? First year?'},
+{id:'d4_why',label:'Why are we doing each one?',ph:'For each project: why this? What\'s the logic? What\'s the opportunity size?'},
+{id:'d4_valid',label:'How do we confirm we\'re right?',ph:'What signals tell us it\'s working? What metrics? Kill criteria if not?'},
+{id:'d4_risk',label:'Biggest risks & how we handle them',ph:'What can go wrong? What do we do if it does? Backup plans?'},
+{id:'d4_start',label:'First thing each person does Monday morning',ph:'The very first action. No planning. Just do. What is it?'}
+]}
+];
+
+var S={who:null,data:{},done:{},pData:{},pName:null,actions:[],day:0,sub:'fill'};
+function KEY(){return 'ps4_'+S.who}
+function load(){try{var r=localStorage.getItem(KEY());if(r){var p=JSON.parse(r);S.data=p.data||{};S.done=p.done||{};S.pData=p.pData||{};S.pName=p.pName||null;S.actions=p.actions||[];S.day=p.day||0;S.sub=p.sub||'fill';}}catch(e){}}
+function save(){try{localStorage.setItem(KEY(),JSON.stringify({who:S.who,data:S.data,done:S.done,pData:S.pData,pName:S.pName,actions:S.actions,day:S.day,sub:S.sub}));}catch(e){}}
+function other(){return S.who==='David'?'Mohammed':'David'}
+function toast(m){var e=document.getElementById('toast');e.textContent=m;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function dy(){return DAYS[S.day];}
+function dk(i){return 'day'+i;}
+
+function R(){
+var a=document.getElementById('app');
+if(!S.who){a.innerHTML=rPick();bPick();}
+else{a.innerHTML=rMain();bMain();}
+}
+
+function rPick(){
+return '<div class="pick"><div><p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e;margin-bottom:6px">Mrs Hallo halloo</p><h1>Partnership Alignment</h1><p>4 structured sessions. Each person fills in their side on their own device. Auto-saves. Exchange when ready. Compare and decide.</p><p style="margin-top:12px;font-size:13px;font-weight:600;color:#44403c">Day 1 \u2014 Partnership Foundation<br>Day 2 \u2014 Full Inventory<br>Day 3 \u2014 Decisions & Direction<br>Day 4 \u2014 Game Plan</p></div><div class="pick-btns"><button class="pick-btn d" data-w="David">I\'m David</button><button class="pick-btn m" data-w="Mohammed">I\'m Mohammed</button></div></div>';
+}
+
+function rMain(){
+var d=dy(),secs=d.sections;
+var filled=secs.filter(function(s){return(S.data[s.id]||'').trim();}).length;
+var cls=S.who==='David'?'d':'m';
+var isDone=S.done[dk(S.day)]||false;
+var hasP=S.pName&&Object.keys(S.pData).length>0;
+var content='';
+if(S.sub==='fill')content=rFill(secs,isDone);
+else if(S.sub==='share')content=rShare(isDone);
+else if(S.sub==='compare')content=rCompare(secs,hasP,isDone);
+else if(S.sub==='actions')content=rActions();
+
+var dayTabsHTML=DAYS.map(function(dd,i){
+var lk=S.done[dk(i)]?' locked':'';
+var ac=i===S.day?' active':'';
+return '<div class="day-tab'+ac+lk+'" data-day="'+i+'"><small style="opacity:.6">'+dd.num+'</small><br>'+dd.title+'</div>';
+}).join('');
+
+return '<div class="ctr"><div class="hdr"><div class="hdr-label">Mrs Hallo halloo</div><h1>Partnership Alignment</h1><div class="badge '+cls+'">'+esc(S.who)+'</div></div><div class="day-tabs">'+dayTabsHTML+'</div><div class="day-title"><h2>'+d.num+': '+d.title+'</h2><p>'+d.sub+'</p></div><div class="sub-tabs"><div class="sub-tab '+(S.sub==='fill'?'active':'')+'" data-sub="fill">Fill In ('+filled+'/'+secs.length+')</div><div class="sub-tab '+(S.sub==='share'?'active':'')+'" data-sub="share">Share</div><div class="sub-tab '+(S.sub==='compare'?'active':'')+'" data-sub="compare">Compare</div><div class="sub-tab '+(S.sub==='actions'?'active':'')+'" data-sub="actions">Actions'+(S.actions.length?' ('+S.actions.length+')':'')+'</div></div><div class="save-bar">Auto-saved on this device</div>'+content+'<div class="reset-row"><button class="btn-reset" id="btn-reset">Reset my session</button></div></div>';
+}
+
+function rFill(secs,isDone){
+var h=secs.map(function(s){
+return '<div class="card"><div class="card-label">'+esc(s.label)+'</div><textarea data-id="'+s.id+'" placeholder="'+esc(s.ph)+'" '+(isDone?'disabled':'')+'>'+esc(S.data[s.id]||'')+'</textarea></div>';
+}).join('');
+var bc=isDone?'btn-done on':'btn-done off';
+var bt=isDone?'LOCKED \u2014 Click to unlock':'I\'m done with this day \u2014 lock my answers';
+var hint=isDone?'Locked. Go to Share to send to '+other()+'.':'Lock when finished. You can\'t see '+other()+'\'s until you import.';
+return h+'<div class="done-bar"><button class="'+bc+'" id="btn-done">'+bt+'</button><div class="done-hint">'+hint+'</div></div>';
+}
+
+function rShare(isDone){
+return '<div class="sh-card"><h3>Send your '+dy().num+' answers to '+other()+'</h3><p>'+(isDone?'Locked. Copy and send via WhatsApp, email, whatever.':'Lock your answers first on Fill In.')+'</p>'+(isDone?'<button class="btn-a pri" id="btn-copy">Copy my answers to clipboard</button>':'<button class="btn-a" disabled>Lock answers first</button>')+'</div><div class="sh-card"><h3>Import '+other()+'\'s answers</h3><p>Paste the code '+other()+' sent you.</p><textarea class="imp-box" id="imp-text" placeholder="Paste '+other()+'\'s code here..."></textarea><button class="btn-a pri" id="btn-imp">Import</button></div>';
+}
+
+function rCompare(secs,hasP,isDone){
+if(!hasP)return '<div class="empty-st"><h3>No partner data yet</h3><p>Go to Share to exchange answers.</p></div>';
+if(!isDone)return '<div class="empty-st"><h3>Lock your answers first</h3><p>Prevents changing after seeing '+other()+'\'s answers.</p></div>';
+var mN=S.who,tN=S.pName,mC=mN==='David'?'d':'m',tC=tN==='David'?'d':'m';
+return '<div style="text-align:center;margin-bottom:14px;font-size:14px;font-weight:600;color:#57534e">'+esc(mN)+' vs '+esc(tN)+'</div>'+secs.map(function(s){
+var a=(S.data[s.id]||'').trim(),b=(S.pData[s.id]||'').trim();
+var fc='none',ft='Neither answered';
+if(a&&b){fc='both';ft='Both answered \u2014 review alignment';}
+else if(a||b){fc='partial';ft='One side missing \u2014 discuss';}
+return '<div class="cmp"><div class="cmp-h">'+esc(s.label)+'</div><div class="cmp-g"><div class="cmp-c"><div class="cmp-n '+mC+'">'+esc(mN)+'</div><div class="cmp-t '+(a?'':'empty')+'">'+(a?esc(a):'Not filled in')+'</div></div><div class="cmp-c"><div class="cmp-n '+tC+'">'+esc(tN)+'</div><div class="cmp-t '+(b?'':'empty')+'">'+(b?esc(b):'Not filled in')+'</div></div></div><div class="cmp-f '+fc+'">'+ft+'</div></div>';
+}).join('');
+}
+
+function rActions(){
+var items=S.actions.map(function(a,i){
+return '<div class="act-i '+(a.done?'done':'')+'"><div class="act-chk '+(a.done?'on':'')+'" data-at="'+i+'">'+(a.done?'\u2713':'')+'</div><div class="act-txt '+(a.done?'done':'')+'">'+esc(a.text)+'</div><input class="act-own" data-ao="'+i+'" value="'+esc(a.owner)+'" placeholder="Owner"><button class="act-rm" data-ar="'+i+'">\u2715</button></div>';
+}).join('');
+return '<div class="act-card"><h3>Action Items & Decisions</h3><p>Capture what\'s decided, who owns it, what happens next. Shared across all days.</p><div class="act-row"><input type="text" id="act-in" placeholder="Add action item or decision..."><button id="btn-add-act">Add</button></div>'+(S.actions.length===0?'<div class="act-empty">No items yet.</div>':items)+'</div>';
+}
+
+function bPick(){
+var btns=document.querySelectorAll('.pick-btn');
+for(var i=0;i<btns.length;i++){(function(b){
+b.addEventListener('click',function(){S.who=b.getAttribute('data-w');load();S.who=b.getAttribute('data-w');save();R();});
+})(btns[i]);}
+}
+
+function bMain(){
+var tabs=document.querySelectorAll('.day-tab');
+for(var i=0;i<tabs.length;i++){(function(t){
+t.addEventListener('click',function(){S.day=parseInt(t.getAttribute('data-day'));S.sub='fill';save();R();});
+})(tabs[i]);}
+var stabs=document.querySelectorAll('.sub-tab');
+for(var i=0;i<stabs.length;i++){(function(t){
+t.addEventListener('click',function(){S.sub=t.getAttribute('data-sub');save();R();});
+})(stabs[i]);}
+
+var tas=document.querySelectorAll('textarea[data-id]');
+for(var i=0;i<tas.length;i++){(function(ta){
+ta.addEventListener('input',function(){S.data[ta.getAttribute('data-id')]=ta.value;save();});
+})(tas[i]);}
+
+var bd=document.getElementById('btn-done');
+if(bd)bd.addEventListener('click',function(){var k=dk(S.day);S.done[k]=!S.done[k];save();toast(S.done[k]?'Locked. Go to Share.':'Unlocked.');R();});
+
+var bc=document.getElementById('btn-copy');
+if(bc)bc.addEventListener('click',function(){
+var d=dy(),dayData={};
+d.sections.forEach(function(s){dayData[s.id]=S.data[s.id]||'';});
+var payload=JSON.stringify({name:S.who,dayId:d.id,dayIdx:S.day,data:dayData,done:true,actions:S.actions});
+var code=btoa(unescape(encodeURIComponent(payload)));
+navigator.clipboard.writeText(code).then(function(){
+toast('Copied! Send to '+other());
+bc.textContent='Copied!';bc.classList.add('ok');
+setTimeout(function(){bc.textContent='Copy my answers to clipboard';bc.classList.remove('ok');},2000);
+});
+});
+
+var bi=document.getElementById('btn-imp');
+if(bi)bi.addEventListener('click',function(){
+var raw=document.getElementById('imp-text').value.trim();
+if(!raw){toast('Paste the code first');return;}
+try{
+var d=JSON.parse(decodeURIComponent(escape(atob(raw))));
+if(!d.name||!d.data)throw new Error();
+S.pName=d.name;
+Object.keys(d.data).forEach(function(k){S.pData[k]=d.data[k];});
+if(d.actions){d.actions.forEach(function(a){if(!S.actions.find(function(x){return x.text===a.text;}))S.actions.push(a);});}
+save();
+toast('Imported '+d.name+'\'s '+(DAYS[d.dayIdx]||{num:''}).num+' answers!');
+S.sub='compare';R();
+}catch(e){toast('Invalid code. Check you copied everything.');}
+});
+
+var ba=document.getElementById('btn-add-act'),ai=document.getElementById('act-in');
+if(ba&&ai){
+var add=function(){if(!ai.value.trim())return;S.actions.push({text:ai.value.trim(),owner:'',done:false});save();R();};
+ba.addEventListener('click',add);
+ai.addEventListener('keydown',function(e){if(e.key==='Enter')add();});
+}
+var ats=document.querySelectorAll('[data-at]');
+for(var i=0;i<ats.length;i++){(function(e){e.addEventListener('click',function(){var x=parseInt(e.getAttribute('data-at'));S.actions[x].done=!S.actions[x].done;save();R();});})(ats[i]);}
+var aos=document.querySelectorAll('[data-ao]');
+for(var i=0;i<aos.length;i++){(function(e){e.addEventListener('input',function(){var x=parseInt(e.getAttribute('data-ao'));S.actions[x].owner=e.value;save();});})(aos[i]);}
+var ars=document.querySelectorAll('[data-ar]');
+for(var i=0;i<ars.length;i++){(function(e){e.addEventListener('click',function(){var x=parseInt(e.getAttribute('data-ar'));S.actions.splice(x,1);save();R();});})(ars[i]);}
+
+document.getElementById('btn-reset').addEventListener('click',function(){
+if(confirm('Delete ALL your data across all 4 days?')){
+localStorage.removeItem(KEY());
+S={who:null,data:{},done:{},pData:{},pName:null,actions:[],day:0,sub:'fill'};R();
+}
+});
+}
+
+R();
+</script>
+</body>
+</html>
