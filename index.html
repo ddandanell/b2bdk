@@ -2,309 +2,676 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D + M Partnership Alignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a3d2e">
+<title>Bali Fixer — Same-Day Emergency Help for Expats in Bali | 24/7 Hotline</title>
+<meta name="description" content="One call. One fixer. Sorted today. Scooter accident, visa overstay, landlord dispute, locked-out villa, KITAS panic — Bali Fixer dispatches a real human within the hour. 24/7 English + Bahasa.">
+<meta name="keywords" content="Bali fixer, Bali emergency help, scooter accident Bali, visa overstay Bali, KITAS emergency, expat concierge Bali, landlord dispute Bali, locked out villa Bali, police report foreigner Bali, 24/7 expat hotline Bali, same-day visa fix, Bali insurance that works">
+<meta property="og:title" content="Bali Fixer — Your Bali Insurance Policy That Actually Shows Up">
+<meta property="og:description" content="Same-day emergency problem solving for expats and business owners in Bali. Real humans on the ground in 60 minutes.">
+<meta property="og:type" content="website">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f4;color:#1c1917;min-height:100vh}
-.ctr{max-width:780px;margin:0 auto;padding:16px}
-.pick{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:92vh;gap:28px;text-align:center}
-.pick h1{font-size:26px;font-weight:700}
-.pick p{color:#78716c;font-size:14px;max-width:460px;line-height:1.6}
-.pick-btns{display:flex;gap:16px}
-.pick-btn{padding:20px 48px;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;border:2px solid #e7e5e4;background:#fff;transition:all .2s}
-.pick-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.pick-btn.d{color:#2563eb}.pick-btn.d:hover{border-color:#2563eb;background:#eff6ff}
-.pick-btn.m{color:#d97706}.pick-btn.m:hover{border-color:#d97706;background:#fffbeb}
-.hdr{text-align:center;padding:16px 0 8px}
-.hdr-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e}
-.hdr h1{font-size:20px;font-weight:700;margin:4px 0}
-.badge{display:inline-block;margin-top:6px;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:700}
-.badge.d{background:#dbeafe;color:#1d4ed8}.badge.m{background:#fef3c7;color:#b45309}
-.day-tabs{display:flex;justify-content:center;gap:4px;margin:14px 0;flex-wrap:wrap}
-.day-tab{padding:10px 12px;font-size:11px;font-weight:700;border-radius:8px;border:2px solid #e7e5e4;background:#fff;cursor:pointer;color:#57534e;transition:all .15s}
-.day-tab:hover{background:#fafaf9}
-.day-tab.active{background:#1c1917;color:#fff;border-color:#1c1917}
-.day-tab.locked{border-color:#86efac;background:#f0fdf4;color:#15803d}
-.day-tab.active.locked{background:#15803d;color:#fff;border-color:#15803d}
-.day-title{text-align:center;margin-bottom:14px}
-.day-title h2{font-size:17px;font-weight:700}.day-title p{font-size:12px;color:#78716c;margin-top:2px}
-.sub-tabs{display:flex;justify-content:center;gap:4px;margin:0 0 12px;flex-wrap:wrap}
-.sub-tab{padding:7px 14px;font-size:11px;font-weight:600;border-radius:6px;border:1px solid #e7e5e4;background:#fff;cursor:pointer;color:#78716c}
-.sub-tab:hover{background:#fafaf9}.sub-tab.active{background:#44403c;color:#fff;border-color:#44403c}
-.save-bar{text-align:center;font-size:11px;color:#16a34a;margin-bottom:10px;font-weight:500}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#78716c;margin-bottom:6px}
-.card textarea{width:100%;border:1px solid #e7e5e4;border-radius:8px;padding:12px;font-size:14px;font-family:inherit;resize:vertical;min-height:80px;outline:none;background:#fafaf9;line-height:1.5}
-.card textarea:focus{border-color:#a8a29e;background:#fff;box-shadow:0 0 0 3px rgba(168,162,158,.1)}
-.card textarea::placeholder{color:#c0bbb6}
-.card textarea:disabled{background:#f0efed;cursor:not-allowed}
-.done-bar{text-align:center;margin:16px 0}
-.btn-done{padding:14px 32px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .2s}
-.btn-done.off{background:#1c1917;color:#fff}.btn-done.off:hover{background:#292524}
-.btn-done.on{background:#dcfce7;color:#15803d;border:2px solid #86efac}
-.done-hint{font-size:11px;color:#a8a29e;margin-top:6px}
-.sh-card{background:#fff;border-radius:12px;padding:22px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);text-align:center}
-.sh-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
-.sh-card p{font-size:12px;color:#78716c;margin-bottom:14px}
-.btn-a{padding:12px 24px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid #e7e5e4;background:#fff;color:#1c1917;transition:all .15s}
-5s}
-.btn-a:hover{background:#fafaf9}
-.btn-a.pri{background:#1c1917;color:#fff;border-color:#1c1917}.btn-a.pri:hover{background:#292524}
-.btn-a.ok{background:#16a34a;color:#fff;border-color:#16a34a}
-.btn-a:disabled{opacity:.4;cursor:not-allowed}
-.imp-box{width:100%;height:80px;border:1px solid #e7e5e4;border-radius:8px;padding:12px;font-size:11px;font-family:monospace;resize:none;outline:none;margin-bottom:10px}
-.imp-box:focus{border-color:#a8a29e}
-.cmp{background:#fff;border-radius:12px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.cmp-h{padding:10px 16px;background:#fafaf9;border-bottom:1px solid #f0efed;font-size:12px;font-weight:700;color:#57534e}
-.cmp-g{display:grid;grid-template-columns:1fr 1fr}
-.cmp-c{padding:14px}.cmp-c:first-child{border-right:1px solid #f0efed}
-.cmp-n{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-.cmp-n.d{color:#2563eb}.cmp-n.m{color:#d97706}
-.cmp-t{font-size:13px;line-height:1.55;white-space:pre-wrap;color:#44403c}
-.cmp-t.empty{color:#c0bbb6;font-style:italic}
-.cmp-f{padding:7px 16px;background:#fafaf9;border-top:1px solid #f0efed;font-size:10px;font-weight:600}
-.cmp-f.both{color:#16a34a}.cmp-f.partial{color:#ea580c}.cmp-f.none{color:#a8a29e}
-.empty-st{text-align:center;padding:50px 20px;color:#a8a29e}
-.empty-st h3{font-size:15px;color:#78716c;margin-bottom:6px}
-.act-card{background:#fff;border-radius:12px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.act-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
-.act-card>p{font-size:12px;color:#78716c;margin-bottom:14px}
-.act-row{display:flex;gap:8px;margin-bottom:14px}
-.act-row input{flex:1;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:13px;outline:none}
-.act-row input:focus{border-color:#a8a29e}
-.act-row button{padding:10px 18px;background:#1c1917;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
-.act-i{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;border:1px solid #e7e5e4;margin-bottom:5px}
-.act-i.done{background:#f0fdf4;border-color:#bbf7d0}
-.act-chk{width:20px;height:20px;border-radius:5px;border:2px solid #d6d3d1;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px}
-.act-chk.on{background:#16a34a;border-color:#16a34a;color:#fff}
-.act-txt{flex:1;font-size:13px}.act-txt.done{text-decoration:line-through;color:#a8a29e}
-.act-own{width:80px;padding:5px 6px;border:1px solid #e7e5e4;border-radius:5px;font-size:10px;text-align:center;outline:none;background:#fafaf9}
-.act-rm{background:none;border:none;color:#d6d3d1;cursor:pointer;font-size:15px;padding:2px}.act-rm:hover{color:#ef4444}
-.act-empty{text-align:center;padding:30px;color:#a8a29e;font-size:12px}
-.reset-row{text-align:center;margin:20px 0}
-.btn-reset{padding:7px 14px;font-size:11px;color:#a8a29e;background:none;border:1px solid #e7e5e4;border-radius:7px;cursor:pointer}.btn-reset:hover{color:#ef4444;border-color:#fca5a5}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1c1917;color:#fff;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:600;z-index:100;opacity:0;transition:opacity .3s;pointer-events:none}.toast.show{opacity:1}
-@media(max-width:600px){.cmp-g{grid-template-columns:1fr}.cmp-c:first-child{border-right:none;border-bottom:1px solid #f0efed}.pick-btns{flex-direction:column}.act-row{flex-direction:column}}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#0a1f1a;--ink2:#1a2e28;--mute:#5a6b65;--line:#e6e2d8;--bg:#faf7f0;--card:#fff;
+  --brand:#0a3d2e;--brand2:#0e5240;--gold:#c89b3c;--alert:#e0432d;--alert2:#c43a26;
+  --ok:#2e7d4f;--soft:#f0ede3;
+}
+html,body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{padding-bottom:88px}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px}
+
+/* Top alert ribbon */
+.ribbon{background:var(--alert);color:#fff;font-size:12px;font-weight:600;text-align:center;padding:8px 14px;letter-spacing:.01em}
+.ribbon b{font-weight:800}
+.ribbon .pulse{display:inline-block;width:7px;height:7px;background:#fff;border-radius:50%;margin-right:6px;animation:pulse 1.4s infinite;vertical-align:middle}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* Header */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--bg);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:17px;letter-spacing:-.01em}
+.logo .dot{width:11px;height:11px;background:var(--alert);border-radius:50%;box-shadow:0 0 0 3px rgba(224,67,45,.18)}
+.nav-call{background:var(--brand);color:#fff;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.nav-call:active{transform:scale(.97)}
+
+/* Hero */
+.hero{padding:28px 0 22px;text-align:left}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.kicker .gd{color:var(--gold)}
+.hero h1{font-size:30px;line-height:1.08;font-weight:900;letter-spacing:-.02em;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--brand);background:linear-gradient(180deg,transparent 65%,#cfe7d8 65%);padding:0 2px}
+.hero .lede{font-size:16px;color:var(--mute);margin-bottom:22px;max-width:42ch}
+.cta-row{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 18px;border-radius:14px;font-size:15px;font-weight:800;letter-spacing:.005em;transition:transform .12s,box-shadow .12s}
+.btn:active{transform:scale(.98)}
+.btn-pri{background:var(--alert);color:#fff;box-shadow:0 6px 20px rgba(224,67,45,.28)}
+.btn-pri:hover{background:var(--alert2)}
+.btn-sec{background:var(--ink);color:#fff}
+.btn-sec:hover{background:var(--ink2)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.trust-line{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--mute);flex-wrap:wrap}
+.trust-line span{display:inline-flex;align-items:center;gap:5px}
+.dot-ok{width:6px;height:6px;background:var(--ok);border-radius:50%;display:inline-block}
+
+/* Crisis picker */
+.section{padding:30px 0}
+.eyebrow{font-size:11px;font-weight:800;color:var(--brand);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.h2{font-size:26px;line-height:1.15;font-weight:900;letter-spacing:-.015em;margin-bottom:8px}
+.sub{font-size:15px;color:var(--mute);margin-bottom:20px;max-width:46ch}
+
+.picker{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.picker-q{font-size:13px;color:var(--mute);margin-bottom:10px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{padding:10px 14px;background:var(--soft);border:1.5px solid transparent;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)}
+.chip:active,.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.picker-out{font-size:14px;color:var(--ink);background:#fbfaf3;border:1px dashed var(--line);border-radius:12px;padding:14px;margin-bottom:14px;display:none}
+.picker-out.on{display:block;animation:slide .25s ease}
+@keyframes slide{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.picker-out b{display:block;font-weight:800;margin-bottom:4px;color:var(--brand)}
+.picker .btn{margin-top:4px}
+
+/* Fixes list */
+.fixes{display:grid;grid-template-columns:1fr;gap:10px}
+.fix{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.fix .ico{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:22px}
+.fix h3{font-size:15px;font-weight:800;margin-bottom:3px;line-height:1.25}
+.fix p{font-size:13px;color:var(--mute);line-height:1.5}
+.fix .eta{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;color:var(--alert);background:#fdecea;padding:3px 8px;border-radius:6px;letter-spacing:.02em}
+
+/* How it works */
+.steps{display:grid;gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.step .num{position:absolute;top:12px;right:14px;font-size:42px;font-weight:900;color:var(--soft);line-height:1}
+.step h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.step p{font-size:14px;color:var(--mute)}
+
+/* Pricing */
+.plans{display:grid;gap:12px}
+.plan{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:20px;position:relative}
+.plan.feat{border-color:var(--brand);box-shadow:0 0 0 3px rgba(10,61,46,.08)}
+.plan-tag{position:absolute;top:-10px;left:18px;background:var(--gold);color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;padding:4px 10px;border-radius:999px;text-transform:uppercase}
+.plan-name{font-size:13px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.plan-price{font-size:32px;font-weight:900;letter-spacing:-.02em}
+.plan-price small{font-size:13px;color:var(--mute);font-weight:600;letter-spacing:0}
+.plan-blurb{font-size:13px;color:var(--mute);margin:6px 0 14px}
+.plan ul{list-style:none;display:grid;gap:8px;margin-bottom:16px}
+.plan li{font-size:13.5px;display:flex;gap:8px;align-items:flex-start}
+.plan li::before{content:"";flex-shrink:0;width:16px;height:16px;border-radius:50%;background:var(--brand);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:center;margin-top:2px}
+
+/* Per-incident table */
+.incidents{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:14px}
+.inc-row{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line);font-size:13.5px;align-items:center}
+.inc-row:last-child{border-bottom:0}
+.inc-row b{font-weight:700}
+.inc-row .pr{font-weight:800;color:var(--brand)}
+
+/* Testimonials */
+.tcards{display:grid;gap:12px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stars{color:var(--gold);font-size:13px;margin-bottom:8px;letter-spacing:1px}
+.tcard p{font-size:14px;line-height:1.55;margin-bottom:12px}
+.who{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mute)}
+.who .av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px}
+.who b{color:var(--ink);font-weight:700}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.stat b{display:block;font-size:24px;font-weight:900;color:var(--brand);letter-spacing:-.02em}
+.stat span{font-size:11px;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.faq summary{padding:16px;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--mute);font-weight:300;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details > div{padding:0 16px 16px;font-size:14px;color:var(--mute);line-height:1.6}
+
+/* Comparison */
+.compare{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.compare-row{display:grid;grid-template-columns:1fr 90px 90px;font-size:13px}
+.compare-row.head{background:var(--ink);color:#fff;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.compare-row.head > div{padding:10px 12px}
+.compare-row > div{padding:12px;border-bottom:1px solid var(--line);display:flex;align-items:center}
+.compare-row:last-child > div{border-bottom:0}
+.compare .y{color:var(--ok);font-weight:800;justify-content:center}
+.compare .n{color:var(--mute);justify-content:center}
+
+/* Final CTA */
+.final{background:var(--brand);color:#fff;border-radius:22px;padding:28px 22px;text-align:center;margin:14px 0}
+.final h2{font-size:24px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px;line-height:1.15;color:#fff}
+.final p{font-size:14px;color:#cfe7d8;margin-bottom:18px}
+.final .btn-pri{background:#fff;color:var(--alert)}
+.final .btn-pri:hover{background:#f6e8e6}
+
+/* Footer */
+.foot{padding:24px 0 30px;font-size:12px;color:var(--mute);text-align:center}
+.foot a{color:var(--mute);text-decoration:underline}
+.foot .small{font-size:11px;margin-top:8px;opacity:.75}
+
+/* Sticky bottom call bar (mobile) */
+.dock{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;z-index:50;box-shadow:0 -8px 24px rgba(0,0,0,.06)}
+.dock .btn{flex:1;font-size:14px;padding:14px 14px}
+.dock .btn-pri{box-shadow:none}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(10,31,26,.55);display:none;align-items:flex-end;justify-content:center;z-index:100;padding:0}
+.modal.on{display:flex}
+.modal-box{background:#fff;width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto;animation:rise .25s ease}
+@keyframes rise{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.modal h3{font-size:20px;font-weight:900;margin-bottom:6px;letter-spacing:-.01em}
+.modal .sub{font-size:13px;margin-bottom:16px}
+.modal label{display:block;font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.06em;margin:10px 0 6px}
+.modal input,.modal textarea,.modal select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:var(--bg);outline:none}
+.modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--brand);background:#fff}
+.modal textarea{min-height:84px;resize:vertical}
+.modal .close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:var(--soft);font-size:18px;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:center}
+.modal .ok-msg{display:none;text-align:center;padding:20px 0}
+.modal .ok-msg.on{display:block}
+.modal .ok-msg .ok-ic{width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 14px}
+
+/* Tablet+ tweaks */
+@media (min-width:720px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  .wrap{max-width:980px;padding:0 28px}
+  .hero{padding:48px 0 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .hero h1{font-size:52px}
+  .hero .lede{font-size:18px}
+  .cta-row{flex-direction:row;flex-wrap:wrap}
+  .cta-row .btn{flex:1;min-width:200px}
+  .fixes{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr 1fr 1fr}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .h2{font-size:34px}
+}
+@media (min-width:720px){.hero-card{padding:22px}}
+.hero-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 6px 20px rgba(10,31,26,.06);margin-top:18px}
+.hero-card-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:12px;color:var(--mute);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.hero-card-head .live{width:8px;height:8px;background:var(--alert);border-radius:50%;animation:pulse 1.4s infinite}
+.tickets{display:grid;gap:10px}
+.ticket{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.ticket b{font-weight:800;color:var(--ink)}
+.ticket span{font-size:11px;color:var(--ok);font-weight:700}
 </style>
 </head>
 <body>
-<div id="pin-gate" style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:20px;text-align:center">
-<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e">Mrs Hallo halloo</p>
-<h1 style="font-size:24px;font-weight:700">Partnership Alignment</h1>
-<p style="color:#78716c;font-size:14px">Enter pin code to continue</p>
-<input id="pin-input" type="password" maxlength="8" placeholder="Pin code" style="width:200px;padding:14px;border:2px solid #e7e5e4;border-radius:10px;font-size:18px;text-align:center;outline:none;font-family:inherit;letter-spacing:.2em" autofocus>
-<button id="pin-btn" style="padding:14px 40px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;background:#1c1917;color:#fff">Enter</button>
-<p id="pin-err" style="color:#ef4444;font-size:13px;display:none">Wrong pin code</p>
+
+<!-- Top alert ribbon -->
+<div class="ribbon"><span class="pulse"></span><b>24/7 hotline live now</b> &nbsp;·&nbsp; English + Bahasa &nbsp;·&nbsp; Avg response 14 min</div>
+
+<!-- Sticky nav -->
+<header class="nav">
+  <a href="#top" class="logo"><span class="dot"></span> BALI&nbsp;FIXER</a>
+  <a href="tel:+6281000000000" class="nav-call">📞 Call now</a>
+</header>
+
+<main class="wrap" id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="kicker"><span class="gd">★</span> The 24/7 fixer for foreigners in Bali</div>
+    <h1>Something went wrong in Bali. <em>We fix it today.</em></h1>
+    <p class="lede">Scooter crash, visa overstay, landlord dispute, locked-out villa, KITAS panic — one call to Bali Fixer dispatches a real human to your problem in under an hour.</p>
+    <div class="cta-row">
+      <a href="tel:+6281000000000" class="btn btn-pri">📞 Call the hotline now</a>
+      <a href="https://wa.me/6281000000000?text=Hi%20Bali%20Fixer%2C%20I%20need%20help" class="btn btn-sec">💬 WhatsApp dispatch</a>
+      <button class="btn btn-ghost" data-open="member">See membership plans</button>
+    </div>
+    <div class="trust-line">
+      <span><span class="dot-ok"></span> 1,400+ cases sorted</span>
+      <span><span class="dot-ok"></span> 4.9★ Google</span>
+      <span><span class="dot-ok"></span> Bali-licensed legal partners</span>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-card-head"><span class="live"></span> Live ops · Right now in Bali</div>
+    <div class="tickets">
+      <div class="ticket"><b>Scooter accident · Pererenan</b><span>● On scene</span></div>
+      <div class="ticket"><b>Visa overstay · Denpasar Imm.</b><span>● Sorted</span></div>
+      <div class="ticket"><b>Villa lockout · Uluwatu</b><span>● Tech dispatched</span></div>
+      <div class="ticket"><b>Landlord dispute · Canggu</b><span>● Mediator en route</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRISIS PICKER -->
+<section class="section">
+  <div class="eyebrow">What just happened?</div>
+  <h2 class="h2">Pick your crisis. Get the fix.</h2>
+  <p class="sub">Tap whatever's going on. We'll tell you exactly what we do, how long it takes, and what it costs — before you even pay.</p>
+
+  <div class="picker">
+    <div class="picker-q">Choose the closest situation:</div>
+    <div class="chips" id="chips">
+      <button class="chip" data-k="accident">🛵 Scooter accident</button>
+      <button class="chip" data-k="visa">🛂 Visa / overstay</button>
+      <button class="chip" data-k="locked">🔑 Locked out</button>
+      <button class="chip" data-k="landlord">🏠 Landlord dispute</button>
+      <button class="chip" data-k="police">🚓 Police / report</button>
+      <button class="chip" data-k="biz">📂 Business / KITAS</button>
+      <button class="chip" data-k="theft">🕵️ Theft / fraud</button>
+      <button class="chip" data-k="hospital">🏥 Hospital / medical</button>
+      <button class="chip" data-k="other">… Something else</button>
+    </div>
+    <div class="picker-out" id="pickerOut"></div>
+    <button class="btn btn-pri" data-open="emergency" id="pickerCta" style="display:none">Send a fixer now →</button>
+  </div>
+</section>
+
+<!-- WHAT WE FIX -->
+<section class="section">
+  <div class="eyebrow">What we fix</div>
+  <h2 class="h2">If it's a Bali emergency, it's on this list.</h2>
+  <p class="sub">No call centers. No "we'll get back to you Monday." A real person, on the ground, in Bahasa Indonesia and English.</p>
+
+  <div class="fixes">
+    <div class="fix">
+      <div class="ico">🛵</div>
+      <div>
+        <h3>Scooter accident response</h3>
+        <p>Hospital coordination, police report, insurance claim, repair, and translator on-site. Sorted in 3 hours instead of 3 days.</p>
+        <span class="eta">~60 min on scene</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🛂</div>
+      <div>
+        <h3>Visa overstay & emergency extension</h3>
+        <p>Same-day at Imigrasi Denpasar. We handle the queue, the fines, the paperwork, the explanation. You stay out of the entry-ban list.</p>
+        <span class="eta">Same-day fix</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🔑</div>
+      <div>
+        <h3>Villa lockout & home security</h3>
+        <p>Verified locksmith plus security dispatched. New locks, security check, door fixed before sundown.</p>
+        <span class="eta">~45 min ETA</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🏠</div>
+      <div>
+        <h3>Landlord & deposit disputes</h3>
+        <p>On-site mediator, sworn translator, and a Bali-licensed lawyer on standby. Most deposits returned within 48 hours.</p>
+        <span class="eta">2 hr response</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">📂</div>
+      <div>
+        <h3>KITAS, business license, NIB</h3>
+        <p>A human physically goes to the office, queues, files, follows up. No more "the agent stopped replying" panic.</p>
+        <span class="eta">Same-day visit</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🕵️</div>
+      <div>
+        <h3>Employee theft & fraud</h3>
+        <p>Investigator, lawyer and police liaison coordinated. Quiet, documented, no drama in front of the rest of your staff.</p>
+        <span class="eta">Discreet</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🚓</div>
+      <div>
+        <h3>Police stop & report support</h3>
+        <p>Translator on the phone in 90 seconds. Lawyer dispatched if needed. Don't pay anything before we arrive.</p>
+        <span class="eta">90 sec phone</span>
+      </div>
+    </div>
+    <div class="fix">
+      <div class="ico">🏥</div>
+      <div>
+        <h3>Hospital & medical liaison</h3>
+        <p>We pick the right hospital, talk to admissions, push your travel insurance, and stay until family arrives.</p>
+        <span class="eta">Stay till sorted</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="eyebrow">How it works</div>
+  <h2 class="h2">Three steps. No groupchats. No guessing.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <span class="num">1</span>
+      <h3>You call or message the hotline</h3>
+      <p>One number. One WhatsApp. Live human in 14 minutes on average — even at 3am.</p>
+    </div>
+    <div class="step">
+      <span class="num">2</span>
+      <h3>We diagnose &amp; quote in writing</h3>
+      <p>Within 15 minutes: what we'll do, who we'll send, the exact cost. No surprises and no "tip culture" upcharges.</p>
+    </div>
+    <div class="step">
+      <span class="num">3</span>
+      <h3>We physically show up &amp; finish it</h3>
+      <p>Mediator, lawyer, locksmith, translator, agent — whoever you actually need. We stay until the problem is closed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section">
+  <div class="eyebrow">Why people switch</div>
+  <h2 class="h2">Versus the Bali default.</h2>
+  <p class="sub">You already know the alternatives. Here's how Bali Fixer stacks up against asking the Facebook group at 2am.</p>
+
+  <div class="compare">
+    <div class="compare-row head">
+      <div>What you actually want</div>
+      <div>Bali Fixer</div>
+      <div>The "guy"</div>
+    </div>
+    <div class="compare-row"><div>Real human in &lt;1 hour</div><div class="y">✓</div><div class="n">—</div></div>
+    <div class="compare-row"><div>Written quote upfront</div><div class="y">✓</div><div class="n">—</div></div>
+    <div class="compare-row"><div>Bali-licensed lawyer on call</div><div class="y">✓</div><div class="n">—</div></div>
+    <div class="compare-row"><div>English + Bahasa, 24/7</div><div class="y">✓</div><div class="n">—</div></div>
+    <div class="compare-row"><div>Replies after 6pm</div><div class="y">✓</div><div class="n">—</div></div>
+    <div class="compare-row"><div>Insurance &amp; embassy liaison</div><div class="y">✓</div><div class="n">—</div></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="stats">
+    <div class="stat"><b>14 min</b><span>Avg first response</span></div>
+    <div class="stat"><b>1,400+</b><span>Cases closed</span></div>
+    <div class="stat"><b>97%</b><span>Same-day resolution</span></div>
+    <div class="stat"><b>4.9 ★</b><span>Member rating</span></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="eyebrow">Membership</div>
+  <h2 class="h2">Your Bali insurance policy that actually shows up.</h2>
+  <p class="sub">Pay the monthly retainer for peace of mind, or pay per-incident — your call. Prices in USD, billed in IDR at market rate. Cancel anytime.</p>
+
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Resident</div>
+      <div class="plan-price">$199<small> / month</small></div>
+      <p class="plan-blurb">For solo expats and remote workers in Bali full-time.</p>
+      <ul>
+        <li>24/7 priority hotline (English + Bahasa)</li>
+        <li>2 incidents / month included</li>
+        <li>Visa & KITAS reminder system</li>
+        <li>Verified vendor network at member rates</li>
+        <li>Same-day response anywhere south Bali</li>
+      </ul>
+      <button class="btn btn-ghost" data-open="member" data-plan="Resident">Choose Resident</button>
+    </div>
+
+    <div class="plan feat">
+      <span class="plan-tag">Most picked</span>
+      <div class="plan-name">Family / Founder</div>
+      <div class="plan-price">$399<small> / month</small></div>
+      <p class="plan-blurb">For couples, families, and small business owners with skin in the game.</p>
+      <ul>
+        <li>Everything in Resident</li>
+        <li>Up to 4 people on the plan</li>
+        <li>5 incidents / month included</li>
+        <li>Lawyer review &amp; standing escrow account</li>
+        <li>Annual visa &amp; lease audit</li>
+        <li>Hospital escalation team on speed-dial</li>
+      </ul>
+      <button class="btn btn-pri" data-open="member" data-plan="Family / Founder">Choose Family / Founder</button>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name">Business</div>
+      <div class="plan-price">$899<small> / month</small></div>
+      <p class="plan-blurb">For villas, restaurants, agencies and any business with staff.</p>
+      <ul>
+        <li>Everything in Family / Founder</li>
+        <li>Unlimited incidents for the business</li>
+        <li>Quarterly compliance &amp; payroll review</li>
+        <li>Employee dispute &amp; theft protocol</li>
+        <li>Dedicated account fixer</li>
+      </ul>
+      <button class="btn btn-ghost" data-open="member" data-plan="Business">Choose Business</button>
+    </div>
+  </div>
+
+  <div class="incidents">
+    <div class="inc-row" style="background:var(--ink);color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em"><span>Pay-per-incident</span><span>From</span></div>
+    <div class="inc-row"><b>Scooter accident response</b><span class="pr">$220</span></div>
+    <div class="inc-row"><b>Visa overstay same-day fix</b><span class="pr">$180</span></div>
+    <div class="inc-row"><b>Locksmith + security dispatch</b><span class="pr">$150</span></div>
+    <div class="inc-row"><b>Landlord mediation + translator</b><span class="pr">$280</span></div>
+    <div class="inc-row"><b>Police stop / report support</b><span class="pr">$240</span></div>
+    <div class="inc-row"><b>Investigator + lawyer (theft)</b><span class="pr">$650</span></div>
+    <div class="inc-row"><b>Hospital liaison (per day)</b><span class="pr">$190</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="eyebrow">Real cases</div>
+  <h2 class="h2">"I genuinely don't know what I would have done."</h2>
+
+  <div class="tcards">
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <p>"I crashed in Pererenan at 11pm with no Indonesian. They were on scene in 40 minutes, dealt with the police, called the hospital, and texted my partner so I didn't have to. The visa renewal they did the next week was the cherry on top."</p>
+      <div class="who"><div class="av">LH</div><div><b>Lukas H.</b> · Australian, Canggu · Resident plan</div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <p>"Landlord tried to keep $4,200 of our deposit citing 'damage' that didn't exist. Bali Fixer sent a mediator and a translator the same afternoon. Money in our account in 36 hours. Membership pays for itself."</p>
+      <div class="who"><div class="av">SM</div><div><b>Sasha &amp; M.</b> · Dutch couple, Uluwatu · Family plan</div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <p>"Two of my staff were skimming. I didn't want a scene. They sent an investigator quietly, gave me a written report, and the lawyer handled the conversation. Saved me an embarrassment and probably 80 million rupiah a year."</p>
+      <div class="who"><div class="av">RC</div><div><b>Rafael C.</b> · Restaurant owner, Seminyak · Business plan</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq">
+  <div class="eyebrow">FAQ</div>
+  <h2 class="h2">The questions every expat asks first.</h2>
+
+  <details><summary>Are you actually licensed?</summary><div>Bali Fixer is a registered Indonesian PT PMA. Our legal work is run through our Bali-licensed law firm partners (SK Kemenkumham on file). We're not lawyers pretending to be a hotline — we're a hotline with real lawyers behind it.</div></details>
+  <details><summary>How fast is "same day"?</summary><div>For South Bali (Canggu, Seminyak, Kuta, Uluwatu, Sanur, Denpasar, Ubud) average dispatch is under 60 minutes, 24/7. North Bali, Nusa islands and East Bali typically 2–4 hours depending on location.</div></details>
+  <details><summary>Do I have to be a member to call?</summary><div>No. You can pay per-incident (pricing above). Members get priority dispatch, member rates on every fixer in our vendor network, a written visa & lease audit, and the hotline answers in under one minute.</div></details>
+  <details><summary>What if I'm in trouble with police right now?</summary><div>Call the hotline first. Don't sign anything, don't pay anything, don't leave. We have a translator on the line within 90 seconds and a Bali-licensed lawyer dispatched if the situation needs one.</div></details>
+  <details><summary>Can you actually stop a deportation?</summary><div>If you call us before the immigration office issues a final deportation order — yes, in most cases. Once a SKEP (deportation decree) is signed, we shift to fighting the entry ban and protecting your assets here. Speed matters: don't wait until day 60.</div></details>
+  <details><summary>What's the difference vs. travel insurance?</summary><div>Travel insurance pays you back later. We physically show up now. Most members keep both — and we'll fight your insurer for you to actually get the payout.</div></details>
+  <details><summary>How do I cancel my membership?</summary><div>One message in the app. No notice period, no exit fee. We'd rather you stay because we're useful, not because we trapped you.</div></details>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section">
+  <div class="final">
+    <h2>Stop hoping nothing goes wrong.</h2>
+    <p>Three minutes to sign up. One person on the planet whose only job is to fix your Bali problems.</p>
+    <button class="btn btn-pri" data-open="member" style="width:100%">Become a member →</button>
+    <p style="margin-top:14px;font-size:12px;color:#cfe7d8">Or call the 24/7 hotline · <a href="tel:+6281000000000" style="color:#fff;text-decoration:underline;font-weight:700">+62&nbsp;810&nbsp;0000&nbsp;0000</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="foot wrap">
+  <div>Bali Fixer · PT&nbsp;Solusi&nbsp;Cepat&nbsp;Bali · Jl. Petitenget No.&nbsp;XX, Seminyak, Bali 80361</div>
+  <div style="margin-top:6px"><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Refund</a> · <a href="mailto:hello@balifixer.co">hello@balifixer.co</a></div>
+  <div class="small">Bali Fixer is a problem-resolution service. We are not an insurance company. Lawyer, medical and immigration work is performed by licensed third parties under our coordination.</div>
+</footer>
+
+</main>
+
+<!-- Sticky bottom dock (mobile) -->
+<div class="dock">
+  <a href="tel:+6281000000000" class="btn btn-pri" style="flex:1">📞 Call</a>
+  <a href="https://wa.me/6281000000000?text=Hi%20Bali%20Fixer%2C%20I%20need%20help" class="btn btn-sec" style="flex:1">💬 WhatsApp</a>
+  <button class="btn btn-ghost" data-open="emergency" style="flex:1">Form</button>
 </div>
-<div id="app" style="display:none"></div>
-<div id="toast" class="toast"></div>
+
+<!-- EMERGENCY MODAL -->
+<div class="modal" id="modalEmergency" role="dialog" aria-modal="true">
+  <div class="modal-box" style="position:relative">
+    <button class="close" data-close>×</button>
+    <div class="modal-form">
+      <h3>🚨 Send a fixer now</h3>
+      <p class="sub">We'll call you back within 5 minutes. If it's life-threatening, dial <b>118</b> first, then us.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+        <a href="tel:+6281000000000" class="btn btn-pri" style="padding:13px">📞 Call</a>
+        <a href="https://wa.me/6281000000000?text=Hi%20Bali%20Fixer%2C%20I%20need%20help" class="btn btn-sec" style="padding:13px">💬 WhatsApp</a>
+      </div>
+      <div style="text-align:center;font-size:11px;color:var(--mute);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em;font-weight:700">— or fill the form —</div>
+      <form id="formEmergency">
+        <label>Your name</label>
+        <input type="text" name="name" required placeholder="First name is fine">
+        <label>WhatsApp / phone</label>
+        <input type="tel" name="phone" required placeholder="+62 …">
+        <label>Where are you right now?</label>
+        <input type="text" name="loc" required placeholder="Area or pin a maps link">
+        <label>What's going on?</label>
+        <select name="kind">
+          <option>Scooter accident</option>
+          <option>Visa / overstay</option>
+          <option>Locked out</option>
+          <option>Landlord dispute</option>
+          <option>Police / report</option>
+          <option>Hospital / medical</option>
+          <option>Theft / fraud</option>
+          <option>Business / KITAS</option>
+          <option>Other</option>
+        </select>
+        <label>Quick details (optional)</label>
+        <textarea name="note" placeholder="The more we know, the faster we move."></textarea>
+        <button type="submit" class="btn btn-pri" style="width:100%;margin-top:14px">Send to dispatch</button>
+        <p style="font-size:11px;color:var(--mute);margin-top:10px;text-align:center">By submitting you agree to be contacted by Bali Fixer. We never share your details.</p>
+      </form>
+    </div>
+    <div class="ok-msg">
+      <div class="ok-ic">✓</div>
+      <h3>Got it. Hang tight.</h3>
+      <p style="font-size:14px;color:var(--mute);margin-top:6px">A fixer is calling you in &lt;5 min. Keep your phone on you and don't sign anything.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MEMBERSHIP MODAL -->
+<div class="modal" id="modalMember" role="dialog" aria-modal="true">
+  <div class="modal-box" style="position:relative">
+    <button class="close" data-close>×</button>
+    <div class="modal-form">
+      <h3>Become a member</h3>
+      <p class="sub">3 minutes. No card needed today — we'll send a quick onboarding call first.</p>
+      <form id="formMember">
+        <label>Name</label>
+        <input type="text" name="name" required>
+        <label>WhatsApp</label>
+        <input type="tel" name="phone" required placeholder="+62 …">
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Plan</label>
+        <select name="plan" id="planSel">
+          <option>Resident — $199/mo</option>
+          <option>Family / Founder — $399/mo</option>
+          <option>Business — $899/mo</option>
+        </select>
+        <label>Where do you live in Bali?</label>
+        <input type="text" name="area" placeholder="Canggu, Ubud, Uluwatu…">
+        <button type="submit" class="btn btn-pri" style="width:100%;margin-top:14px">Request onboarding call</button>
+      </form>
+    </div>
+    <div class="ok-msg">
+      <div class="ok-ic">✓</div>
+      <h3>Welcome to the membership.</h3>
+      <p style="font-size:14px;color:var(--mute);margin-top:6px">We'll WhatsApp you within the hour to onboard. From the moment you reply, you're covered.</p>
+    </div>
+  </div>
+</div>
+
 <script>
-var PIN='20262026';
 (function(){
-var gate=document.getElementById('pin-gate'),app=document.getElementById('app'),inp=document.getElementById('pin-input'),btn=document.getElementById('pin-btn'),err=document.getElementById('pin-err');
-if(sessionStorage.getItem('ps4_auth')==='1'){gate.style.display='none';app.style.display='block';}
-function tryPin(){
-if(inp.value===PIN){sessionStorage.setItem('ps4_auth','1');gate.style.display='none';app.style.display='block';}
-else{err.style.display='block';inp.value='';inp.focus();}
-}
-btn.addEventListener('click',tryPin);
-inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryPin();});
+  // Modal handling
+  var openers=document.querySelectorAll('[data-open]');
+  for(var i=0;i<openers.length;i++){(function(b){
+    b.addEventListener('click',function(){
+      var k=b.getAttribute('data-open');
+      var m=document.getElementById(k==='emergency'?'modalEmergency':'modalMember');
+      if(b.getAttribute('data-plan')){
+        var s=document.getElementById('planSel');
+        if(s){
+          for(var j=0;j<s.options.length;j++){
+            if(s.options[j].text.indexOf(b.getAttribute('data-plan'))===0)s.selectedIndex=j;
+          }
+        }
+      }
+      m.classList.add('on');
+      document.body.style.overflow='hidden';
+    });
+  })(openers[i]);}
+  var closers=document.querySelectorAll('[data-close]');
+  for(var i=0;i<closers.length;i++){closers[i].addEventListener('click',closeAll);}
+  document.querySelectorAll('.modal').forEach(function(m){
+    m.addEventListener('click',function(e){if(e.target===m)closeAll();});
+  });
+  function closeAll(){
+    document.querySelectorAll('.modal').forEach(function(m){
+      m.classList.remove('on');
+      var f=m.querySelector('.modal-form'),o=m.querySelector('.ok-msg');
+      if(f&&o){f.style.display='block';o.classList.remove('on');}
+      var fr=m.querySelector('form');if(fr)fr.reset();
+    });
+    document.body.style.overflow='';
+  }
+
+  // Form submission (placeholder — wire to backend later)
+  ['formEmergency','formMember'].forEach(function(id){
+    var f=document.getElementById(id);
+    if(!f)return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var box=f.closest('.modal-box');
+      box.querySelector('.modal-form').style.display='none';
+      box.querySelector('.ok-msg').classList.add('on');
+    });
+  });
+
+  // Crisis picker logic
+  var fixes={
+    accident:{t:'Scooter accident',d:'We dispatch a Bahasa-speaking fixer + medic coordinator. Police report, hospital, insurance handled in one call.',eta:'~60 min on scene',price:'$220'},
+    visa:{t:'Visa / overstay',d:'Same-day visit to Imigrasi Denpasar. We handle the fine paperwork and explain the situation in Bahasa.',eta:'Same-day',price:'$180'},
+    locked:{t:'Locked out of villa',d:'Verified locksmith + security guard dispatched. New locks installed today.',eta:'~45 min ETA',price:'$150'},
+    landlord:{t:'Landlord dispute',d:'On-site mediator and sworn translator. Lawyer on standby. Most deposits returned in 48 hours.',eta:'2 hr response',price:'$280'},
+    police:{t:'Police stop / report',d:'Translator on the phone in 90 seconds. Lawyer dispatched if needed. Don\'t sign anything before we arrive.',eta:'90 sec phone',price:'$240'},
+    biz:{t:'KITAS / business license',d:'Real human to the office today. NIB, KITAS, OSS, BKPM — we queue so you don\'t.',eta:'Same-day visit',price:'$200'},
+    theft:{t:'Theft or staff fraud',d:'Discreet investigator + lawyer + police liaison. Documented, quiet, no drama.',eta:'Same-day brief',price:'$650'},
+    hospital:{t:'Hospital / medical',d:'We pick the right hospital, push your insurer, stay until family arrives.',eta:'Stay till sorted',price:'$190/day'},
+    other:{t:'Something else',d:'If a foreigner has had this problem in Bali, we\'ve probably fixed it. Try us.',eta:'Call to scope',price:'Quote in 15 min'}
+  };
+  var chips=document.querySelectorAll('#chips .chip'),out=document.getElementById('pickerOut'),cta=document.getElementById('pickerCta');
+  for(var i=0;i<chips.length;i++){(function(c){
+    c.addEventListener('click',function(){
+      for(var j=0;j<chips.length;j++)chips[j].classList.remove('on');
+      c.classList.add('on');
+      var k=c.getAttribute('data-k'),f=fixes[k];
+      out.innerHTML='<b>'+f.t+'</b>'+f.d+'<div style="margin-top:8px;display:flex;gap:10px;font-size:12px;font-weight:700"><span style="color:var(--alert)">⏱ '+f.eta+'</span><span style="color:var(--brand)">From '+f.price+'</span></div>';
+      out.classList.add('on');
+      cta.style.display='flex';
+    });
+  })(chips[i]);}
 })();
-
-var DAYS=[
-{id:'day1',num:'Day 1',title:'Partnership Foundation',sub:'Do we want this? How does it work? What are the rules?',sections:[
-{id:'d1_want',label:'Do we want to work together? Why?',ph:'Be honest. What makes this partnership worth it for you?'},
-{id:'d1_commit',label:'What is your commitment level?',ph:'Full-time? Part-time? How many hours? For how long? What are you willing to sacrifice?'},
-{id:'d1_rules',label:'Rules of working together',ph:'How do we communicate? How do we handle disagreements? What happens if one person doesn\'t deliver?'},
-{id:'d1_company',label:'Company structure',ph:'Ownership split? Legal entity? Who signs what? Where is the company registered?'},
-{id:'d1_roles',label:'Roles & decision rights',ph:'Who decides what? Who has final say on what topics? What needs both to agree?'},
-{id:'d1_money',label:'Money rules',ph:'How do we split revenue? Salaries? Expenses? Who pays for what? What if one invests more?'},
-{id:'d1_exit',label:'Exit & protection',ph:'What if one wants out? What happens to the work? IP? Clients? Non-compete?'},
-{id:'d1_deal',label:'Dealbreakers',ph:'What would make you walk away? Non-negotiables? Red lines?'}
-]},
-{id:'day2',num:'Day 2',title:'Full Inventory',sub:'Everything each person has been doing. Customers, products, people, assets.',sections:[
-{id:'d2_work',label:'What have you been working on the last 5 months?',ph:'Projects, clients, products, experiments, systems built...'},
-{id:'d2_cust',label:'Customers & clients',ph:'Who are they? What do they pay? What stage? Contracts? Pipeline?'},
-{id:'d2_prod',label:'Products & services',ph:'What exists? What\'s being sold? What\'s in progress? What\'s just an idea?'},
-{id:'d2_people',label:'People & team',ph:'Who do you work with? Freelancers? Employees? Key contacts?'},
-{id:'d2_assets',label:'Assets & systems',ph:'Code, platforms, tools, accounts, domains, IP, content, templates...'},
-{id:'d2_money',label:'Financial status',ph:'Current revenue? Costs? Runway? Debts? Pending payments?'},
-{id:'d2_reuse',label:'What can the other person use from your work?',ph:'What from your side would help the partnership? What can be combined?'},
-{id:'d2_where',label:'Where does each thing belong?',ph:'Which projects go into the partnership? Which stay personal? Which get killed?'}
-]},
-{id:'day3',num:'Day 3',title:'Decisions & Direction',sub:'What we do, what we don\'t do, and the timeline.',sections:[
-{id:'d3_1m',label:'What do we do in the next 1 month?',ph:'Immediate actions, quick wins, must-do items...'},
-{id:'d3_3m',label:'Where should we be in 3 months?',ph:'Revenue target? Product status? Client count? Team size?'},
-{id:'d3_6m',label:'Where should we be in 6 months?',ph:'Business state? Revenue? Systems? Market position?'},
-{id:'d3_12m',label:'12-month goal',ph:'The big picture. What does success look like in one year?'},
-{id:'d3_who',label:'Who does what?',ph:'David\'s responsibilities vs Mohammed\'s responsibilities. Clear ownership.'},
-{id:'d3_not',label:'What are we NOT going to do?',ph:'What do we say no to? What gets parked? What distractions do we kill?'},
-{id:'d3_focus',label:'What is the #1 focus for the first 90 days?',ph:'If everything else fails, this one thing must work. What is it?'}
-]},
-{id:'day4',num:'Day 4',title:'Game Plan',sub:'Tasks, people, money targets, validation. Then we start.',sections:[
-{id:'d4_tasks',label:'All tasks to get started',ph:'List everything that needs to happen in the first 2-4 weeks. Be specific.'},
-{id:'d4_people',label:'Who do we need?',ph:'Developers? Designers? Salespeople? Where do we find them? Budget?'},
-{id:'d4_how',label:'How are we going to do it?',ph:'Working rhythm? Weekly calls? Tools? Reporting? How do we stay aligned?'},
-{id:'d4_money',label:'Money goal per project/product',ph:'Revenue target for each thing. Monthly? First 3 months? First year?'},
-{id:'d4_why',label:'Why are we doing each one?',ph:'For each project: why this? What\'s the logic? What\'s the opportunity size?'},
-{id:'d4_valid',label:'How do we confirm we\'re right?',ph:'What signals tell us it\'s working? What metrics? Kill criteria if not?'},
-{id:'d4_risk',label:'Biggest risks & how we handle them',ph:'What can go wrong? What do we do if it does? Backup plans?'},
-{id:'d4_start',label:'First thing each person does Monday morning',ph:'The very first action. No planning. Just do. What is it?'}
-]}
-];
-
-var S={who:null,data:{},done:{},pData:{},pName:null,actions:[],day:0,sub:'fill'};
-function KEY(){return 'ps4_'+S.who}
-function load(){try{var r=localStorage.getItem(KEY());if(r){var p=JSON.parse(r);S.data=p.data||{};S.done=p.done||{};S.pData=p.pData||{};S.pName=p.pName||null;S.actions=p.actions||[];S.day=p.day||0;S.sub=p.sub||'fill';}}catch(e){}}
-function save(){try{localStorage.setItem(KEY(),JSON.stringify({who:S.who,data:S.data,done:S.done,pData:S.pData,pName:S.pName,actions:S.actions,day:S.day,sub:S.sub}));}catch(e){}}
-function other(){return S.who==='David'?'Mohammed':'David'}
-function toast(m){var e=document.getElementById('toast');e.textContent=m;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-function dy(){return DAYS[S.day];}
-function dk(i){return 'day'+i;}
-
-function R(){
-var a=document.getElementById('app');
-if(!S.who){a.innerHTML=rPick();bPick();}
-else{a.innerHTML=rMain();bMain();}
-}
-
-function rPick(){
-return '<div class="pick"><div><p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e;margin-bottom:6px">Mrs Hallo halloo</p><h1>Partnership Alignment</h1><p>4 structured sessions. Each person fills in their side on their own device. Auto-saves. Exchange when ready. Compare and decide.</p><p style="margin-top:12px;font-size:13px;font-weight:600;color:#44403c">Day 1 \u2014 Partnership Foundation<br>Day 2 \u2014 Full Inventory<br>Day 3 \u2014 Decisions & Direction<br>Day 4 \u2014 Game Plan</p></div><div class="pick-btns"><button class="pick-btn d" data-w="David">I\'m David</button><button class="pick-btn m" data-w="Mohammed">I\'m Mohammed</button></div></div>';
-}
-
-function rMain(){
-var d=dy(),secs=d.sections;
-var filled=secs.filter(function(s){return(S.data[s.id]||'').trim();}).length;
-var cls=S.who==='David'?'d':'m';
-var isDone=S.done[dk(S.day)]||false;
-var hasP=S.pName&&Object.keys(S.pData).length>0;
-var content='';
-if(S.sub==='fill')content=rFill(secs,isDone);
-else if(S.sub==='share')content=rShare(isDone);
-else if(S.sub==='compare')content=rCompare(secs,hasP,isDone);
-else if(S.sub==='actions')content=rActions();
-
-var dayTabsHTML=DAYS.map(function(dd,i){
-var lk=S.done[dk(i)]?' locked':'';
-var ac=i===S.day?' active':'';
-return '<div class="day-tab'+ac+lk+'" data-day="'+i+'"><small style="opacity:.6">'+dd.num+'</small><br>'+dd.title+'</div>';
-}).join('');
-
-return '<div class="ctr"><div class="hdr"><div class="hdr-label">Mrs Hallo halloo</div><h1>Partnership Alignment</h1><div class="badge '+cls+'">'+esc(S.who)+'</div></div><div class="day-tabs">'+dayTabsHTML+'</div><div class="day-title"><h2>'+d.num+': '+d.title+'</h2><p>'+d.sub+'</p></div><div class="sub-tabs"><div class="sub-tab '+(S.sub==='fill'?'active':'')+'" data-sub="fill">Fill In ('+filled+'/'+secs.length+')</div><div class="sub-tab '+(S.sub==='share'?'active':'')+'" data-sub="share">Share</div><div class="sub-tab '+(S.sub==='compare'?'active':'')+'" data-sub="compare">Compare</div><div class="sub-tab '+(S.sub==='actions'?'active':'')+'" data-sub="actions">Actions'+(S.actions.length?' ('+S.actions.length+')':'')+'</div></div><div class="save-bar">Auto-saved on this device</div>'+content+'<div class="reset-row"><button class="btn-reset" id="btn-reset">Reset my session</button></div></div>';
-}
-
-function rFill(secs,isDone){
-var h=secs.map(function(s){
-return '<div class="card"><div class="card-label">'+esc(s.label)+'</div><textarea data-id="'+s.id+'" placeholder="'+esc(s.ph)+'" '+(isDone?'disabled':'')+'>'+esc(S.data[s.id]||'')+'</textarea></div>';
-}).join('');
-var bc=isDone?'btn-done on':'btn-done off';
-var bt=isDone?'LOCKED \u2014 Click to unlock':'I\'m done with this day \u2014 lock my answers';
-var hint=isDone?'Locked. Go to Share to send to '+other()+'.':'Lock when finished. You can\'t see '+other()+'\'s until you import.';
-return h+'<div class="done-bar"><button class="'+bc+'" id="btn-done">'+bt+'</button><div class="done-hint">'+hint+'</div></div>';
-}
-
-function rShare(isDone){
-return '<div class="sh-card"><h3>Send your '+dy().num+' answers to '+other()+'</h3><p>'+(isDone?'Locked. Copy and send via WhatsApp, email, whatever.':'Lock your answers first on Fill In.')+'</p>'+(isDone?'<button class="btn-a pri" id="btn-copy">Copy my answers to clipboard</button>':'<button class="btn-a" disabled>Lock answers first</button>')+'</div><div class="sh-card"><h3>Import '+other()+'\'s answers</h3><p>Paste the code '+other()+' sent you.</p><textarea class="imp-box" id="imp-text" placeholder="Paste '+other()+'\'s code here..."></textarea><button class="btn-a pri" id="btn-imp">Import</button></div>';
-}
-
-function rCompare(secs,hasP,isDone){
-if(!hasP)return '<div class="empty-st"><h3>No partner data yet</h3><p>Go to Share to exchange answers.</p></div>';
-if(!isDone)return '<div class="empty-st"><h3>Lock your answers first</h3><p>Prevents changing after seeing '+other()+'\'s answers.</p></div>';
-var mN=S.who,tN=S.pName,mC=mN==='David'?'d':'m',tC=tN==='David'?'d':'m';
-return '<div style="text-align:center;margin-bottom:14px;font-size:14px;font-weight:600;color:#57534e">'+esc(mN)+' vs '+esc(tN)+'</div>'+secs.map(function(s){
-var a=(S.data[s.id]||'').trim(),b=(S.pData[s.id]||'').trim();
-var fc='none',ft='Neither answered';
-if(a&&b){fc='both';ft='Both answered \u2014 review alignment';}
-else if(a||b){fc='partial';ft='One side missing \u2014 discuss';}
-return '<div class="cmp"><div class="cmp-h">'+esc(s.label)+'</div><div class="cmp-g"><div class="cmp-c"><div class="cmp-n '+mC+'">'+esc(mN)+'</div><div class="cmp-t '+(a?'':'empty')+'">'+(a?esc(a):'Not filled in')+'</div></div><div class="cmp-c"><div class="cmp-n '+tC+'">'+esc(tN)+'</div><div class="cmp-t '+(b?'':'empty')+'">'+(b?esc(b):'Not filled in')+'</div></div></div><div class="cmp-f '+fc+'">'+ft+'</div></div>';
-}).join('');
-}
-
-function rActions(){
-var items=S.actions.map(function(a,i){
-return '<div class="act-i '+(a.done?'done':'')+'"><div class="act-chk '+(a.done?'on':'')+'" data-at="'+i+'">'+(a.done?'\u2713':'')+'</div><div class="act-txt '+(a.done?'done':'')+'">'+esc(a.text)+'</div><input class="act-own" data-ao="'+i+'" value="'+esc(a.owner)+'" placeholder="Owner"><button class="act-rm" data-ar="'+i+'">\u2715</button></div>';
-}).join('');
-return '<div class="act-card"><h3>Action Items & Decisions</h3><p>Capture what\'s decided, who owns it, what happens next. Shared across all days.</p><div class="act-row"><input type="text" id="act-in" placeholder="Add action item or decision..."><button id="btn-add-act">Add</button></div>'+(S.actions.length===0?'<div class="act-empty">No items yet.</div>':items)+'</div>';
-}
-
-function bPick(){
-var btns=document.querySelectorAll('.pick-btn');
-for(var i=0;i<btns.length;i++){(function(b){
-b.addEventListener('click',function(){S.who=b.getAttribute('data-w');load();S.who=b.getAttribute('data-w');save();R();});
-})(btns[i]);}
-}
-
-function bMain(){
-var tabs=document.querySelectorAll('.day-tab');
-for(var i=0;i<tabs.length;i++){(function(t){
-t.addEventListener('click',function(){S.day=parseInt(t.getAttribute('data-day'));S.sub='fill';save();R();});
-})(tabs[i]);}
-var stabs=document.querySelectorAll('.sub-tab');
-for(var i=0;i<stabs.length;i++){(function(t){
-t.addEventListener('click',function(){S.sub=t.getAttribute('data-sub');save();R();});
-})(stabs[i]);}
-
-var tas=document.querySelectorAll('textarea[data-id]');
-for(var i=0;i<tas.length;i++){(function(ta){
-ta.addEventListener('input',function(){S.data[ta.getAttribute('data-id')]=ta.value;save();});
-})(tas[i]);}
-
-var bd=document.getElementById('btn-done');
-if(bd)bd.addEventListener('click',function(){var k=dk(S.day);S.done[k]=!S.done[k];save();toast(S.done[k]?'Locked. Go to Share.':'Unlocked.');R();});
-
-var bc=document.getElementById('btn-copy');
-if(bc)bc.addEventListener('click',function(){
-var d=dy(),dayData={};
-d.sections.forEach(function(s){dayData[s.id]=S.data[s.id]||'';});
-var payload=JSON.stringify({name:S.who,dayId:d.id,dayIdx:S.day,data:dayData,done:true,actions:S.actions});
-var code=btoa(unescape(encodeURIComponent(payload)));
-navigator.clipboard.writeText(code).then(function(){
-toast('Copied! Send to '+other());
-bc.textContent='Copied!';bc.classList.add('ok');
-setTimeout(function(){bc.textContent='Copy my answers to clipboard';bc.classList.remove('ok');},2000);
-});
-});
-
-var bi=document.getElementById('btn-imp');
-if(bi)bi.addEventListener('click',function(){
-var raw=document.getElementById('imp-text').value.trim();
-if(!raw){toast('Paste the code first');return;}
-try{
-var d=JSON.parse(decodeURIComponent(escape(atob(raw))));
-if(!d.name||!d.data)throw new Error();
-S.pName=d.name;
-Object.keys(d.data).forEach(function(k){S.pData[k]=d.data[k];});
-if(d.actions){d.actions.forEach(function(a){if(!S.actions.find(function(x){return x.text===a.text;}))S.actions.push(a);});}
-save();
-toast('Imported '+d.name+'\'s '+(DAYS[d.dayIdx]||{num:''}).num+' answers!');
-S.sub='compare';R();
-}catch(e){toast('Invalid code. Check you copied everything.');}
-});
-
-var ba=document.getElementById('btn-add-act'),ai=document.getElementById('act-in');
-if(ba&&ai){
-var add=function(){if(!ai.value.trim())return;S.actions.push({text:ai.value.trim(),owner:'',done:false});save();R();};
-ba.addEventListener('click',add);
-ai.addEventListener('keydown',function(e){if(e.key==='Enter')add();});
-}
-var ats=document.querySelectorAll('[data-at]');
-for(var i=0;i<ats.length;i++){(function(e){e.addEventListener('click',function(){var x=parseInt(e.getAttribute('data-at'));S.actions[x].done=!S.actions[x].done;save();R();});})(ats[i]);}
-var aos=document.querySelectorAll('[data-ao]');
-for(var i=0;i<aos.length;i++){(function(e){e.addEventListener('input',function(){var x=parseInt(e.getAttribute('data-ao'));S.actions[x].owner=e.value;save();});})(aos[i]);}
-var ars=document.querySelectorAll('[data-ar]');
-for(var i=0;i<ars.length;i++){(function(e){e.addEventListener('click',function(){var x=parseInt(e.getAttribute('data-ar'));S.actions.splice(x,1);save();R();});})(ars[i]);}
-
-document.getElementById('btn-reset').addEventListener('click',function(){
-if(confirm('Delete ALL your data across all 4 days?')){
-localStorage.removeItem(KEY());
-S={who:null,data:{},done:{},pData:{},pName:null,actions:[],day:0,sub:'fill'};R();
-}
-});
-}
-
-R();
 </script>
+
 </body>
 </html>
