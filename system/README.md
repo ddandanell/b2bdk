@@ -27,6 +27,7 @@ If you ever feel "I'm not sure how to phrase this" — you skipped a step.
 
 ## File map
 
+### The lock (strategy)
 | File | What it locks |
 | --- | --- |
 | `brand.md` | Name, promise, position, voice rules, banned words, colors |
@@ -35,6 +36,23 @@ If you ever feel "I'm not sure how to phrase this" — you skipped a step.
 | `templates.md` | Copy-paste templates per content type |
 | `checklist.md` | Pre-publish operational checklist |
 | `connect.md` | How any new build wires into the existing site |
+
+### The team (execution)
+| Folder | What it holds |
+| --- | --- |
+| `team/` | Index of the 6 specialist agents |
+| `plans/` | Roadmap, current sprint, backlog, cadence |
+| `assets/` | Image/file storage rules + library |
+| `research/` | Research outputs (competitors, keywords, market, pain, cases) |
+
+Plus the wiring in `/.claude/`:
+- `.claude/agents/` — 6 trained sub-agents (web-designer, seo-master, copywriter, researcher, project-manager, reviewer)
+- `.claude/commands/` — slash commands: `/start`, `/new-page`, `/audit`, `/plan-week`
+
+## How to start working
+
+Type `/start` and the router reads the sprint, then offers a menu. See
+`team/README.md` for the full team list.
 
 ---
 
